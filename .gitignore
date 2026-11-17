@@ -19,4 +19,4 @@ Thumbs.db
 .idea/
 *.iml
 
-src/main/webapp/META-INF/
+WebContent/META-INF/

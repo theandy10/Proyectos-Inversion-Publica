@@ -1,4 +1,4 @@
-package pe.cibertec.database;
+package pe.cibertec.conexion;
 
 import java.io.InputStream;
 import java.sql.Connection;

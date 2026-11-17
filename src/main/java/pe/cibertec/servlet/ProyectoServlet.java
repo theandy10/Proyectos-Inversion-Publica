@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import pe.cibertec.dao.ProyectoDAO;
-import pe.cibertec.entidades.Proyecto;
+import pe.cibertec.modelo.Proyecto;
 import pe.cibertec.interfaces.IProyectoDAO;
 import pe.cibertec.validacion.ValidadorProyecto;
 

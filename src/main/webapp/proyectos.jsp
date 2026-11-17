@@ -2,7 +2,7 @@
 <%@ page import="java.util.Collections" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="pe.cibertec.entidades.Proyecto" %>
+<%@ page import="pe.cibertec.modelo.Proyecto" %>
 <%@ page import="pe.cibertec.util.Texto" %>
 <%!
     private String v(Map<String, String> valores, String campo) {
@@ -36,8 +36,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proyectos de Inversión Pública | MML</title>
-    <link href="<%= contexto %>/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<%= contexto %>/assets/css/estilos.css" rel="stylesheet">
+    <link href="<%= contexto %>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%= contexto %>/css/estilos.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 
@@ -274,7 +274,7 @@
 </div>
 <% } %>
 
-<script src="<%= contexto %>/assets/js/bootstrap.bundle.min.js"></script>
-<script src="<%= contexto %>/assets/js/validacion.js"></script>
+<script src="<%= contexto %>/js/bootstrap.bundle.min.js"></script>
+<script src="<%= contexto %>/js/validacion.js"></script>
 </body>
 </html>

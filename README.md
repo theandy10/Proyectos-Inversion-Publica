@@ -24,46 +24,48 @@ Municipalidad Metropolitana de Lima.
 
 **Registro y listado**
 
-![Pantalla principal](docs/01-registro.png)
+![Pantalla principal](Documentacion/01-registro.png)
 
 **Validaciones del lado del servidor**
 
-![Validaciones](docs/02-validaciones.png)
+![Validaciones](Documentacion/02-validaciones.png)
 
 **Detalle del proyecto**
 
-![Detalle](docs/03-detalle.png)
+![Detalle](Documentacion/03-detalle.png)
 
 ## Auditoría
 
 El detalle de la verificación (requisito por requisito, casos límite y pruebas de seguridad) está en
-[`docs/AUDITORIA.md`](docs/AUDITORIA.md).
+[`Documentacion/AUDITORIA.md`](Documentacion/AUDITORIA.md).
 
 ## Estructura del proyecto
 
 ```
 T1_ProyectosMuni/
-├─ db/
+├─ BaseDatos/
 │  ├─ bd_proyectos_muni_sqlserver.sql    -- script para SQL Server
 │  └─ bd_proyectos_muni_mysql.sql        -- script alternativo para MySQL
-├─ src/main/java/
+├─ src/
 │  ├─ db.properties                      -- configuración de conexión
 │  └─ pe/cibertec/
-│     ├─ entidades/Proyecto.java
+│     ├─ modelo/Proyecto.java
 │     ├─ interfaces/IProyectoDAO.java
 │     ├─ dao/ProyectoDAO.java
-│     ├─ database/Conexion.java
+│     ├─ conexion/Conexion.java
 │     ├─ validacion/ValidadorProyecto.java
 │     ├─ util/Texto.java
 │     └─ servlet/ProyectoServlet.java
-├─ src/main/webapp/
+├─ WebContent/
 │  ├─ index.jsp                          -- redirige al controlador
 │  ├─ proyectos.jsp                      -- formulario + listado
 │  ├─ error.jsp
-│  ├─ assets/                            -- Bootstrap y estilos
+│  ├─ css/                               -- Bootstrap y estilos
+│  ├─ js/
 │  └─ WEB-INF/
 │     ├─ web.xml
 │     └─ lib/mssql-jdbc.jar
+├─ Documentacion/
 ├─ build.ps1                             -- compila y genera el WAR
 └─ dist/T1_ProyectosMuni.war             -- entregable
 ```
@@ -73,7 +75,7 @@ T1_ProyectosMuni/
 ### SQL Server
 
 ```powershell
-sqlcmd -S localhost -E -C -i db\bd_proyectos_muni_sqlserver.sql
+sqlcmd -S localhost -E -C -i BaseDatos\bd_proyectos_muni_sqlserver.sql
 ```
 
 El script crea:
@@ -89,10 +91,10 @@ El script crea:
 ### MySQL (alternativa)
 
 ```powershell
-mysql -u root -p < db\bd_proyectos_muni_mysql.sql
+mysql -u root -p < BaseDatos\bd_proyectos_muni_mysql.sql
 ```
 
-Luego en `src/main/java/db.properties` comenta el bloque de SQL Server y usa:
+Luego en `src/db.properties` comenta el bloque de SQL Server y usa:
 
 ```properties
 db.driver=com.mysql.cj.jdbc.Driver

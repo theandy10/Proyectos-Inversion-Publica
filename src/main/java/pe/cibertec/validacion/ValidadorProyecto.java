@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import pe.cibertec.entidades.Proyecto;
+import pe.cibertec.modelo.Proyecto;
 
 /**
  * Validaciones del lado del servidor para el registro de proyectos.

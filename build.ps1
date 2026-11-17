@@ -26,14 +26,14 @@ Remove-Item $clases, $staging, $dist -Recurse -Force -ErrorAction SilentlyContin
 New-Item -ItemType Directory -Force -Path $clases, $staging, $dist | Out-Null
 
 Write-Host "2/4 Compilando clases Java..." -ForegroundColor Cyan
-$fuentes = Get-ChildItem (Join-Path $raiz "src\main\java") -Recurse -Filter *.java | Select-Object -ExpandProperty FullName
+$fuentes = Get-ChildItem (Join-Path $raiz "src") -Recurse -Filter *.java | Select-Object -ExpandProperty FullName
 & javac -encoding UTF-8 --release 17 -cp (Join-Path $TomcatHome "lib\servlet-api.jar") -d $clases $fuentes
 if ($LASTEXITCODE -ne 0) { throw "La compilacion fallo." }
 
 Write-Host "3/4 Armando estructura de la aplicacion web..." -ForegroundColor Cyan
-Copy-Item (Join-Path $raiz "src\main\webapp\*") $staging -Recurse -Force
+Copy-Item (Join-Path $raiz "WebContent\*") $staging -Recurse -Force
 New-Item -ItemType Directory -Force -Path (Join-Path $staging "WEB-INF\classes") | Out-Null
-Copy-Item (Join-Path $raiz "src\main\java\db.properties") (Join-Path $staging "WEB-INF\classes") -Force
+Copy-Item (Join-Path $raiz "src\db.properties") (Join-Path $staging "WEB-INF\classes") -Force
 Get-ChildItem $clases | ForEach-Object {
     Copy-Item $_.FullName -Destination (Join-Path $staging "WEB-INF\classes") -Recurse -Force
 }

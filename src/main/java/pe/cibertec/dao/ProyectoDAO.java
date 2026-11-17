@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.cibertec.database.Conexion;
-import pe.cibertec.entidades.Proyecto;
+import pe.cibertec.conexion.Conexion;
+import pe.cibertec.modelo.Proyecto;
 import pe.cibertec.interfaces.IProyectoDAO;
 
 /**

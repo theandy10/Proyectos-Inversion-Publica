@@ -1,4 +1,4 @@
-package pe.cibertec.entidades;
+package pe.cibertec.modelo;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;

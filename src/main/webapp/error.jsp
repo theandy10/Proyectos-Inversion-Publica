@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Error | Proyectos MML</title>
-    <link href="<%= request.getContextPath() %>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
 <div class="container py-5">
