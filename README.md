@@ -1,4 +1,4 @@
-# T1 - Proyectos de Inversión Pública (JSP + Servlet + JDBC)
+# T1 - Proyectos de Inversión Pública 
 
 Evaluación de Laboratorio Nro 1 del curso **Lenguaje de Programación I** (CIBERTEC, ciclo 3).
 Aplicación web para registrar y listar los **Proyectos de Inversión Pública** de la
