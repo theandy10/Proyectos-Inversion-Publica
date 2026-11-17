@@ -18,3 +18,5 @@ toncat/
 Thumbs.db
 .idea/
 *.iml
+
+src/main/webapp/META-INF/
