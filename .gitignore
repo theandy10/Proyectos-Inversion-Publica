@@ -1,0 +1,20 @@
+# Salida de compilacion y empaquetado
+build/
+dist/
+target/
+*.class
+*.war
+
+# Metadatos de Eclipse / Tomcat
+.metadata/
+Servers/
+tomcat/
+toncat/
+*.log
+*.tmp
+
+# Sistema operativo / IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml

@@ -1,0 +1,93 @@
+:root {
+    --mml-azul: #0b3d91;
+    --mml-azul-oscuro: #062a63;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.navbar.bg-dark {
+    background: linear-gradient(90deg, var(--mml-azul-oscuro), var(--mml-azul)) !important;
+}
+
+.card {
+    border-radius: 0.75rem;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.65rem 0.75rem;
+}
+
+.table thead th {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #5c677d;
+    white-space: nowrap;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: var(--mml-azul);
+    box-shadow: 0 0 0 0.2rem rgba(11, 61, 145, 0.15);
+}
+
+.tabla-proyectos {
+    table-layout: fixed;
+    font-size: 0.82rem;
+}
+
+.tabla-proyectos > :not(caption) > * > * {
+    padding: 0.45rem 0.4rem;
+}
+
+.tabla-proyectos th,
+.tabla-proyectos td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tabla-proyectos td:nth-child(2),
+.tabla-proyectos td:nth-child(3) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 991.98px) {
+    .tabla-proyectos {
+        min-width: 820px;
+    }
+}
+
+/* Evita que la tabla ancha estire la columna en pantallas pequenas */
+main .row > [class*="col-"] {
+    min-width: 0;
+}
+
+.btn-primary {
+    background-color: var(--mml-azul);
+    border-color: var(--mml-azul);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--mml-azul-oscuro);
+    border-color: var(--mml-azul-oscuro);
+}
+
+.modal-header.bg-primary {
+    background: linear-gradient(90deg, var(--mml-azul-oscuro), var(--mml-azul)) !important;
+}
+
+@media (max-width: 575.98px) {
+    main {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+}
