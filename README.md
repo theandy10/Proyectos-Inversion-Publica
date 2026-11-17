@@ -34,6 +34,11 @@ Municipalidad Metropolitana de Lima.
 
 ![Detalle](docs/03-detalle.png)
 
+## Auditoría
+
+El detalle de la verificación (requisito por requisito, casos límite y pruebas de seguridad) está en
+[`docs/AUDITORIA.md`](docs/AUDITORIA.md).
+
 ## Estructura del proyecto
 
 ```

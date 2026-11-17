@@ -57,13 +57,13 @@ public class ProyectoServlet extends HttpServlet {
         if (errores.isEmpty()) {
             try {
                 if (proyectoDAO.registrar(proyecto) == 1) {
-                    request.setAttribute("exito", "El proyecto \"" + proyecto.getNombre() + "\" se registro correctamente.");
+                    request.setAttribute("exito", "El proyecto \"" + proyecto.getNombre() + "\" se registró correctamente.");
                     valores.clear();
                 } else {
                     request.setAttribute("errorGeneral", "No se pudo registrar el proyecto. Intente nuevamente.");
                 }
             } catch (RuntimeException e) {
-                request.setAttribute("errorGeneral", "Ocurrio un problema al guardar en la base de datos.");
+                request.setAttribute("errorGeneral", "Ocurrió un problema al guardar en la base de datos.");
                 log("Error al registrar proyecto", e);
             }
         } else {

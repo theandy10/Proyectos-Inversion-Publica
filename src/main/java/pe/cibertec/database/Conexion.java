@@ -16,11 +16,11 @@ public class Conexion {
     static {
         try (InputStream entrada = Conexion.class.getClassLoader().getResourceAsStream("db.properties")) {
             if (entrada == null) {
-                throw new IllegalStateException("No se encontro db.properties en WEB-INF/classes");
+                throw new IllegalStateException("No se encontró db.properties en WEB-INF/classes");
             }
             PROPIEDADES.load(entrada);
         } catch (Exception e) {
-            throw new ExceptionInInitializerError("No se pudo leer la configuracion de la base de datos: " + e.getMessage());
+            throw new ExceptionInInitializerError("No se pudo leer la configuración de la base de datos: " + e.getMessage());
         }
     }
 

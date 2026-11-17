@@ -39,7 +39,7 @@ public final class ValidadorProyecto {
         // 2. Descripcion tecnica: opcional, maximo 255 caracteres
         String descripcion = limpiar(valores.get("descripcion"));
         if (descripcion.length() > 255) {
-            errores.put("descripcion", "La descripcion no debe superar los 255 caracteres.");
+            errores.put("descripcion", "La descripción no debe superar los 255 caracteres.");
         } else {
             proyecto.setDescripcion(descripcion.isEmpty() ? null : descripcion);
         }
@@ -52,7 +52,7 @@ public final class ValidadorProyecto {
         } else {
             fechaInicio = parsearFecha(textoInicio);
             if (fechaInicio == null) {
-                errores.put("fechaInicio", "La fecha de inicio no es valida.");
+                errores.put("fechaInicio", "La fecha de inicio no es válida.");
             } else {
                 proyecto.setFechaInicio(fechaInicio);
             }
@@ -61,13 +61,13 @@ public final class ValidadorProyecto {
         // 4. Fecha de culminacion: requerida y posterior o igual al inicio
         String textoFin = limpiar(valores.get("fechaFin"));
         if (textoFin.isEmpty()) {
-            errores.put("fechaFin", "La fecha de culminacion es obligatoria.");
+            errores.put("fechaFin", "La fecha de culminación es obligatoria.");
         } else {
             LocalDate fechaFin = parsearFecha(textoFin);
             if (fechaFin == null) {
-                errores.put("fechaFin", "La fecha de culminacion no es valida.");
+                errores.put("fechaFin", "La fecha de culminación no es válida.");
             } else if (fechaInicio != null && fechaFin.isBefore(fechaInicio)) {
-                errores.put("fechaFin", "La fecha de culminacion no puede ser anterior a la fecha de inicio.");
+                errores.put("fechaFin", "La fecha de culminación no puede ser anterior a la fecha de inicio.");
             } else {
                 proyecto.setFechaFin(fechaFin);
             }
@@ -76,9 +76,9 @@ public final class ValidadorProyecto {
         // 5. Asesor tecnico: requerido, entre 3 y 80 caracteres
         String asesor = limpiar(valores.get("asesor"));
         if (asesor.isEmpty()) {
-            errores.put("asesor", "El asesor tecnico es obligatorio.");
+            errores.put("asesor", "El asesor técnico es obligatorio.");
         } else if (asesor.length() < 3 || asesor.length() > 80) {
-            errores.put("asesor", "El asesor tecnico debe tener entre 3 y 80 caracteres.");
+            errores.put("asesor", "El asesor técnico debe tener entre 3 y 80 caracteres.");
         } else {
             proyecto.setAsesor(asesor);
         }
@@ -95,12 +95,12 @@ public final class ValidadorProyecto {
                 } else if (presupuesto.scale() > 2) {
                     errores.put("presupuesto", "El presupuesto solo admite 2 decimales.");
                 } else if (presupuesto.compareTo(new BigDecimal("999999999.99")) > 0) {
-                    errores.put("presupuesto", "El presupuesto supera el limite permitido.");
+                    errores.put("presupuesto", "El presupuesto supera el límite permitido.");
                 } else {
                     proyecto.setPresupuesto(presupuesto);
                 }
             } catch (NumberFormatException e) {
-                errores.put("presupuesto", "El presupuesto debe ser un numero valido.");
+                errores.put("presupuesto", "El presupuesto debe ser un número válido.");
             }
         }
 
